@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="YouTube の動画 ID・Dropbox の共有リンク・mp4 の faststart・SRT と WebVTT の字幕を扱う @shiodome47/video-utils の見本" />
+    <title>video-utils の見本</title>
+  </head>
+  <body>
+    <main class="demo">
+      <header>
+        <h1>video-utils</h1>
+        <p>動画まわりの小さな道具（計算だけ・依存なし）。<span class="muted">Small helpers for video URLs, mp4 files and subtitles.</span></p>
+        <pre class="code"><code>npm install @shiodome47/video-utils</code></pre>
+      </header>
+
+      <section>
+        <h2>1. 動画の URL <span class="muted">Video URLs</span></h2>
+        <p class="muted">YouTube・Dropbox・ふつうの URL を貼ってください。<br />Paste a YouTube, Dropbox or any other URL.</p>
+        <input id="url" type="url" inputmode="url" autocomplete="off" spellcheck="false" value="https://youtu.be/aqz-KE-bpKQ?si=demo" aria-label="URL" />
+        <table class="table"><tbody id="url-out"></tbody></table>
+      </section>
+
+      <section>
+        <h2>2. 字幕（SRT・WebVTT） <span class="muted">Subtitles</span></h2>
+        <p class="muted">字幕ファイルの中身を貼るか、ファイルを選んでください。<br />Paste subtitles or pick a .srt / .vtt file.</p>
+        <textarea id="subs" rows="8" spellcheck="false" aria-label="字幕"></textarea>
+        <div class="row">
+          <input id="subs-file" type="file" accept=".srt,.vtt,text/vtt" aria-label="字幕のファイル" />
+          <label>まとめる間（秒） <span class="muted">join gap (s)</span>
+            <input id="gap" type="number" min="0" max="10" step="0.5" value="0" />
+          </label>
+        </div>
+        <p id="subs-count" class="muted"></p>
+        <table class="table"><thead><tr><th>開始 start</th><th>終了 end</th><th>文 text</th></tr></thead><tbody id="subs-out"></tbody></table>
+      </section>
+
+      <section>
+        <h2>3. mp4 の目次（faststart） <span class="muted">mp4 faststart</span></h2>
+        <p class="muted">
+          mp4 を選ぶと、中の部品の並び（ftyp・moov・mdat など）を出します。目次（moov）が後ろにあれば、前へ移した動画を作れます。ファイルはこの端末の中だけで扱い、どこにも送りません。<br />
+          Pick an mp4 to see its top-level boxes. If <code>moov</code> comes after <code>mdat</code>, a fixed copy is made. The file never leaves this device.
+        </p>
+        <input id="mp4" type="file" accept="video/mp4,.mp4,.m4v,.mov" aria-label="mp4 のファイル" />
+        <div id="mp4-out"></div>
+      </section>
+
+      <footer class="footer">
+        <a href="https://github.com/shiodome47/video-utils">GitHub</a>
+        <a href="https://www.npmjs.com/package/@shiodome47/video-utils">npm</a>
+      </footer>
+    </main>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

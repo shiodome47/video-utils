@@ -1,0 +1,15 @@
+{
+  // 型の説明（dist/*.d.ts）だけを作る。テストは入れない
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "noEmit": false,
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "outDir": "dist",
+    "rootDir": "src",
+    "paths": {},
+    "types": []
+  },
+  "include": ["src"],
+  "exclude": ["src/**/__tests__"]
+}
