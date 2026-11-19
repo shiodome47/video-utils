@@ -6,7 +6,7 @@
 - **mp4**: 目次（`moov`）を前へ移す（**iPhone の Safari で、保存した動画が 0 秒から進まない**問題の対策）
 - **字幕**: SRT・WebVTT を読む・近い字幕をまとめる・今ある印と突き合わせる
 
-- 見本: （Vercel に置いたら、ここに URL を書きます）
+- 見本: https://video-utils-ten.vercel.app/ （URL を貼る・字幕を貼る・mp4 を選ぶと、結果が見られます。ファイルは端末の中だけで扱います）
 - English: [see below](#english)
 
 ## 入れ方
@@ -112,6 +112,8 @@ MIT
 ## English
 
 Small, dependency-free helpers for video apps (no UI, no React).
+
+- Demo: https://video-utils-ten.vercel.app/
 
 ```bash
 npm install @shiodome47/video-utils
