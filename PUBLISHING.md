@@ -77,5 +77,5 @@
 1. Vercel で「Add New… → Project」から、GitHub の `shiodome47/video-utils` を選ぶ
 2. 設定はリポジトリの `vercel.json` に書いてあるので、そのまま「Deploy」
    （ビルド: `npm run build:demo`、出力: `examples/web/dist`）
-3. できた URL を、README のいちばん上の「見本」に書く（まだ無い。できたら教えてください。CATALOG.md にも書きます）
+3. できた URL を、README のいちばん上の「見本」に書く（いまは https://video-utils-ten.vercel.app/ ）
 4. 見本のページでは、URL を貼る・字幕を貼る・mp4 を選ぶと、結果が見られます（ファイルは端末の中だけで扱い、どこにも送りません）
